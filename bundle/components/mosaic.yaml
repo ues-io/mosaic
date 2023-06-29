@@ -1,0 +1,149 @@
+name: mosaic
+public: true
+category: VISUALIZATION
+pack: main
+entrypoint: components/mosaic/mosaic
+slots: null
+title: Mosaic
+discoverable: true
+description: Generate a mosaic from text
+properties:
+  - type: WIRE
+    name: colorwire
+    label: Color Wire
+  - type: FIELD
+    name: coloridfield
+    label: Color ID Field
+    wireField: colorwire
+  - type: FIELD
+    name: colornamefield
+    label: Color Name Field
+    wireField: colorwire
+  - type: FIELD
+    name: colorvaluefield
+    label: Color Value Field
+    wireField: colorwire
+  - type: WIRE
+    name: tilewire
+    label: Tile Wire
+  - type: FIELD
+    name: tilecoloridfield
+    label: Tile Color ID Field
+    wireField: tilewire
+  - type: FIELD
+    name: tilecolornamefield
+    label: Tile Color Name Field
+    wireField: tilewire
+  - type: FIELD
+    name: tilecolorvaluefield
+    label: Tile Color Value Field
+    wireField: tilewire
+  - type: FIELD
+    name: tilequantityfield
+    label: Tile Quantity Field
+    wireField: tilewire
+  - name: text
+    label: Text
+    type: TEXT
+  - name: fontSize
+    label: Font Size
+    type: NUMBER
+  - name: backgroundColor
+    label: Background Color
+    type: TEXT
+  - name: gridHeight
+    label: Grid Height
+    type: NUMBER
+  - name: gridWidth
+    label: Grid Width
+    type: NUMBER
+  - name: font
+    label: Font Style
+    type: TEXT
+  - name: color
+    label: Font Color
+    type: TEXT
+  - name: heightOffset
+    label: Height Offset
+    type: NUMBER
+  - name: uesio.id
+    label: Component ID
+    type: COMPONENT_ID
+defaultDefinition: null
+sections:
+  - type: HOME
+    properties:
+      - uesio.id
+      - text
+      - fontSize
+      - backgroundColor
+      - gridHeight
+      - gridWidth
+      - font
+      - color
+      - heightOffset
+  - type: CUSTOM
+    id: colors
+    label: Colors
+    properties:
+      - colorwire
+      - coloridfield
+      - colornamefield
+      - colorvaluefield
+  - type: CUSTOM
+    id: tiles
+    label: Tiles
+    properties:
+      - tilewire
+      - tilecoloridfield
+      - tilecolornamefield
+      - tilecolorvaluefield
+      - tilequantityfield
+  - type: STYLES
+  - type: DISPLAY
+signals:
+  SET_TEXT:
+    label: Set Text
+    properties:
+      - type: TEXT
+        name: text
+        label: Text
+  SET_FONT_SIZE:
+    label: Set Font Size
+    properties:
+      - type: NUMBER
+        name: fontSize
+        label: Font Size
+  SET_BACKGROUND_COLOR:
+    label: Set Background Color
+    properties:
+      - type: TEXT
+        name: backgroundColor
+        label: Background Color
+  SET_GRID_HEIGHT:
+    label: Set Grid Height
+    properties:
+      - type: NUMBER
+        name: gridHeight
+        label: Grid Height
+  SET_GRID_WIDTH:
+    label: Set Grid Width
+    properties:
+      - type: NUMBER
+        name: gridWidth
+        label: Grid Width
+  SET_FONT:
+    label: Set Font Style
+    properties:
+      - type: TEXT
+        name: font
+        label: Font Style
+  SET_COLOR:
+    label: Set Color
+    properties:
+      - type: TEXT
+        name: color
+        label: Color
+styleRegions:
+  root:
+  cell:
